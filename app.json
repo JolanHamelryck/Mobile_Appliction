@@ -12,16 +12,16 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./public/icons/scholar.png",
         "backgroundColor": "#ffffff"
       }
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/favicon.png"
+      "favicon": "./public/icons/scholar.png"
     },
-    "plugins": ["expo-router"],
+    "plugins": ["expo-router", "expo-asset", "expo-font"],
     "experiments": {
       "typedRoutes": true
     }

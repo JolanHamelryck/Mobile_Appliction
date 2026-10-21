@@ -1,20 +1,26 @@
 {
-  "short_name": "Jolan_app",
-  "name": "Jolan_app_name",
+  "id": "/",
+  "short_name": "UCLL Starter",
+  "name": "UCLL Mobile Starter",
+  "description": "A simple two-page mobile app.",
   "icons": [
     {
-      "src": "/favicon-192x192.png",
+      "src": "/icons/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "/favicon-512x512.png",
+      "src": "/icons/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
-  "start_url": ".", 
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "theme_color": "black",
-  "background_color": "white"
+  "orientation": "portrait",
+  "theme_color": "#1d4ed8",
+  "background_color": "#ffffff"
 }
