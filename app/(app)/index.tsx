@@ -1,5 +1,5 @@
-import { Redirect } from "expo-router";
+import { HomeScreenContent } from "@/components/HomeScreenContent";
 
 export default function Index() {
-  return <Redirect href="/tour" />;
+  return <HomeScreenContent />;
 }

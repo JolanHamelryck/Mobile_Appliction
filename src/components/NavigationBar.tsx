@@ -1,24 +1,20 @@
 import { COLORS } from "@/constants/colors";
 import { Tabs } from "expo-router";
 import { Image } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
 export default function NavigationBar() {
   return (
     <Tabs>
       <Tabs.Screen
-        name="tour"
+        name="index"
         options={{
-          title: "Tour",
+          title: "Home",
           tabBarIcon: ({ size, focused }) => (
-            <Image
-              source={require("../../public/icons/tourIcon.png")}
-              style={{
-                width: size,
-                height: size,
-                borderRadius: size / 2,
-                borderWidth: 2,
-                borderColor: focused ? COLORS.primary : "transparent",
-              }}
+            <Ionicons
+              name="home"
+              size={size}
+              color={focused ? COLORS.primary : COLORS.grey}
             />
           ),
         }}
@@ -59,7 +55,6 @@ export default function NavigationBar() {
           ),
         }}
       />
-      <Tabs.Screen name="index" options={{ href: null }} />
     </Tabs>
   );
 }
