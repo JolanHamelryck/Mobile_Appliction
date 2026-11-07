@@ -1,45 +1,72 @@
-#Project
+# Login
 
-In this project i will make a mobile app that students can use as a guide for the school UC Leuven-Limburg Campus Connect.
+Email : r1234567@ucll.be
+Password : r1234567
 
-## Supabase login setup
+# UCLL Tour App
 
-1. In Supabase, open **Project Settings → API** and copy the Project URL and the
-   publishable key (the public `anon` key also works with the Supabase client).
-2. Copy `.env.example` to `.env` and set `EXPO_PUBLIC_SUPABASE_URL` and
-   `EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY` to those values.
-3. In the Supabase dashboard, open **Authentication → Users** and create a
-   test user with an email and password. Confirm the user's email if email
-   confirmation is enabled for the project.
-4. Restart Expo so it loads the new environment variables:
+A mobile-friendly campus guide for students at UCLL (UC Leuven-Limburg). The
+app introduces students to campus places through a simple virtual tour.
 
-   ```sh
-   npx expo start -c
-   ```
+## Target audience
 
-The login screen uses Supabase Auth; do not create or store user passwords in a
-database table. The app persists the Supabase session on the device. Values
-prefixed with `EXPO_PUBLIC_` are included in the client app, so only use the
-publishable/anon key here. Never put the Supabase service-role key in the app or
-commit `.env`.
+- Prospective students visiting UCLL for the first time
+- New and current students who want to find useful places and feel at home on
+  campus
 
-## Web app and PWA
+## What the app will do
 
-Export the static web app with:
+The app provides a welcoming introduction to UCLL, tour information about
+campus locations such as the library.
+
+## Roadmap
+
+- [x] Create the welcome, campus tour, and guest profile screens
+- [x] Add Supabase email/password sign-in
+- [ ] Add and verify live campus location data
+- [ ] Created a layout students can use to navigate the floors
+- [ ] Expand the tour with more campus locations
+- [ ] Polish and test the deployed app on phones
+
+## Alternatives and competitors
+
+- **Google Maps** — provides general maps and directions, but not a UCLL-focused
+  introduction or student tips.
+- **UCLL website** — provides official school information, but is not a guided,
+  mobile campus tour.
+- **Other campus guide and virtual tour apps** — may offer campus navigation,
+  but this app is focused on UCLL students and campus-specific information.
+
+## Run locally
+
+Install dependencies and start Expo:
+
+```sh
+npm install
+npm start
+```
+
+Press `i` to open the iOS Simulator or `a` to open an Android emulator. To run
+the web version:
+
+```sh
+npm run web
+```
+
+To run the browser tests:
+
+```sh
+npx cypress run
+```
+
+## Web deployment
+
+Build the static web app with:
 
 ```sh
 npx expo export --platform web
 ```
 
-Deploy the contents of `dist/` to a host that serves the site over HTTPS. A
-service worker is only available on HTTPS or `localhost`. The site links to
-`public/manifest.json`, registers `public/sw.js`, and caches the app shell and
-Expo bundles so the last visited pages can still load offline. To check it in
-Chrome, open DevTools → **Application** → **Manifest** and **Service Workers**,
-then load the app once online and switch DevTools → **Network** to **Offline**
-before reloading.
-
-        <View>
-          <Text>Email : r1234567@ucll.be</Text>
-          <Text>Password : r1234567</Text>
-        </View>
+Deploy the generated `dist/` folder to a host that provides HTTPS. The PWA
+manifest and service worker support installation and offline access to the
+app shell and previously visited screens.
