@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { Link, router, useLocalSearchParams } from "expo-router";
 import { COLORS } from "@/constants/colors";
@@ -5,8 +6,13 @@ import { TourStopScreenContent } from "@/components/map/TourStopScreenContent";
 
 export function HomeScreenContent() {
   const { tourStop } = useLocalSearchParams<{ tourStop?: string }>();
+  const [isHydrated, setIsHydrated] = useState(false);
 
-  if (tourStop === "library") {
+  useEffect(() => {
+    setIsHydrated(true);
+  }, []);
+
+  if (isHydrated && tourStop === "library") {
     return <TourStopScreenContent onExit={() => router.replace("/")} />;
   }
 
