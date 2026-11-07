@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { router } from 'expo-router';
-import { useAuthStore } from '../src/state/useAuthStore';
-import { InputField } from '../src/components/primitives/InputField';
-import { StyledButton } from '../src/components/StyledButton';
-import { Stack } from '../src/components/primitives/Stack';
-import { Text } from '../src/components/primitives/Text';
+import { useAuthStore } from '../state/useAuthStore';
+import { InputField } from './primitives/InputField';
+import { StyledButton } from './StyledButton';
+import { Stack } from './primitives/Stack';
+import { Text } from './primitives/Text';
 
-export default function LoginScreen() {
+export function LoginScreenContent() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');

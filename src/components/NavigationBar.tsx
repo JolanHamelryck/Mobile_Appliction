@@ -5,14 +5,14 @@ import { Ionicons } from "@expo/vector-icons";
 
 export default function NavigationBar() {
   return (
-    <Tabs>
+    <Tabs screenOptions={{ headerShown: false }}>
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
+          title: "Tour",
           tabBarIcon: ({ size, focused }) => (
             <Ionicons
-              name="home"
+              name="play-circle-outline"
               size={size}
               color={focused ? COLORS.primary : COLORS.grey}
             />
@@ -53,6 +53,12 @@ export default function NavigationBar() {
               }}
             />
           ),
+        }}
+      />
+      <Tabs.Screen
+        name="login"
+        options={{
+          href: null,
         }}
       />
     </Tabs>

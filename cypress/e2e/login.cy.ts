@@ -7,6 +7,12 @@ describe('Login screen', () => {
     cy.get('[data-testid="email-input"]').should('exist');
     cy.get('[data-testid="password-input"]').should('exist');
     cy.get('[data-testid="login-button"]').should('exist');
+    cy.get('[role="tablist"]').within(() => {
+      cy.contains('[role="tab"]', 'Tour').should('be.visible');
+      cy.contains('[role="tab"]', 'Map').should('be.visible');
+      cy.contains('[role="tab"]', 'Profile').should('be.visible');
+      cy.contains('[role="tab"]', 'Login').should('not.exist');
+    });
   });
 
   it('logs in with valid credentials and navigates to home', () => {
